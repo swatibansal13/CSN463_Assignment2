@@ -9,25 +9,16 @@ public class Q4 {
     }
 
     public static void smallestInt() {
-
-        ArrayList<Long> sumList = new ArrayList<>();
-
-        int i = 2;
-
-        sumList.add(0, 3L);
-
-        while (sumList.get(i - 2) != i * i) {
-
-            System.out.println(i);
-
-            sumList.add(i - 1, sumList.get(i - 2) + i);
-
-            i++;
-
+        int num=1;
+        int sum=1;
+        while(num<Integer.MAX_VALUE){
+            if(sum==num*num){
+                System.out.println("Answer is: "+num);
+            }
+            num+=1;
+            sum+=num;
         }
-
-        System.out.println(sumList.get(i - 2));
-
+        System.out.println("Final loop, number: "+num);
     }
 
 }
