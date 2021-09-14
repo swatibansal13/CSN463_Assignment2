@@ -1,6 +1,7 @@
 package assignment2;
 
 import java.util.Scanner;
+import jdk.internal.net.http.common.Log;
 
 public class HailStoneSequence_Q6 {
 
@@ -8,10 +9,21 @@ public class HailStoneSequence_Q6 {
 
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        hailstoneSequence(n);
+        try{
+            hailstoneSequence(n);
+        }
+
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        
     }
 
-    public static void hailstoneSequence(int n) {
+    public static void hailstoneSequence(int n) throws Exception{
+
+        if(n<=0){
+            throw new Exception("Please enter a positive number greater than 0.");
+        }
 
         while (n != 1) {
             System.out.print(n + " ");
